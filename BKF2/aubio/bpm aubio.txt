@@ -1,0 +1,29 @@
+    First, we import the necessary modules from the aubio library. These modules include source for reading audio files, tempo for calculating the tempo, and other utility modules.
+
+    We define a function called calculate_bpm that takes an audio file path as input. This function will calculate and return the BPM of the audio file.
+
+    Inside the calculate_bpm function, we specify the window size (win_s) and hop size (hop_s) for the analysis. These parameters determine the size of the frames that will be processed.
+
+    We create a placeholder variable samplerate and initialize it to 0. This variable will hold the actual samplerate of the audio file.
+
+    We create a source object by providing the audio file path, samplerate, and hop size. This object will be used to read the audio file.
+
+    We retrieve the actual samplerate from the source object and assign it to the samplerate variable.
+
+    We create a tempo object and specify the default method for tempo detection, along with the window size, hop size, and samplerate.
+
+    We create an empty list called beats to store the detected beats.
+
+    We enter a loop to process the audio file frame by frame until all frames have been read. In each iteration, we call the source object (s()) to retrieve the next set of samples and the tempo object (o()) to check if a beat is detected in those samples.
+
+    If a beat is detected (is_beat is true), we retrieve the timestamp of the detected beat (this_beat) using the get_last_s() method and append it to the beats list.
+
+    We check if all frames have been read (read < hop_s). If not, we continue to the next iteration of the loop.
+
+    Once the loop is completed, we use the get_bpm() method of the tempo object to calculate the BPM based on the detected beats.
+
+    We return the calculated BPM from the calculate_bpm function.
+
+    Finally, we provide the path to the audio file, call the calculate_bpm function, and print the calculated BPM.
+
+The code uses the Aubio library to process the audio file, detect beats, and calculate the BPM based on the detected beats. It provides a simple way to analyze the tempo of an audio file using Aubio's functionality.
