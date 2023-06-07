@@ -1,0 +1,19 @@
+    The estimate_bpm() function takes an audio_file parameter, representing the path to an audio file.
+
+    Inside the function, the librosa.load() function is used to load the audio file. The sr=None argument ensures that the original sample rate of the audio file is preserved, and the function returns two values: audio_data and sample_rate.
+
+    The librosa.beat.beat_track() function is then called to estimate the BPM (tempo) of the loaded audio. It takes two keyword arguments: y (audio data) and sr (sample rate). The function returns two values: tempo (estimated BPM) and beat_frames (frame indices of detected beats).
+
+    The round() function is used to round the tempo value to the nearest whole number, representing the estimated BPM.
+
+    The rounded BPM value is stored in the estimated_bpm variable.
+
+    The estimated_bpm value is returned from the estimate_bpm() function.
+
+    The audio_file variable is set to the path of the audio file you want to analyze.
+
+    Finally, the estimate_bpm() function is called with audio_file as an argument, and the result is printed using the print() function.
+
+When you run the code, it loads the audio file, estimates the BPM using Librosa's beat tracking algorithm, rounds the BPM value, and prints the estimated BPM.
+
+Make sure to replace '/home/user/Music/keybpm.wav' with the actual path to your audio file before running the code.

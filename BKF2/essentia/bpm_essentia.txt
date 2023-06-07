@@ -1,0 +1,21 @@
+    We import the necessary modules from the Essentia library: essentia.standard as es. This allows us to access the audio processing algorithms and functions provided by Essentia.
+
+    We define the calculate_bpm function that takes an audio_path as input, which represents the path to the audio file we want to analyze.
+
+    Inside the calculate_bpm function, we start by loading the audio file using the MonoLoader algorithm. This algorithm loads the audio and returns a mono audio signal.
+
+    We then instantiate the BeatTrackerDegara algorithm as beat_tracker. This algorithm estimates the beat positions in the audio and returns an array of timestamps representing the detected beats.
+
+    Next, we create an empty list called intervals to store the durations between consecutive beats. We iterate through the beats array and calculate the interval between each beat by subtracting the current beat timestamp from the next beat timestamp. We append these intervals to the intervals list.
+
+    After obtaining the intervals, we calculate the average interval by summing up all the intervals and dividing by the number of intervals.
+
+    Finally, we calculate the BPM (beats per minute) by dividing 60 (the number of seconds in a minute) by the average interval. The result is assigned to the bpm variable.
+
+    Outside the function, we have an example usage section where we provide the path to the audio file in the audio_file variable.
+
+    We call the calculate_bpm function with the audio_file path and store the returned BPM value in the bpm variable.
+
+    Finally, we print the calculated BPM to the console.
+
+By following these steps, the code loads the audio file, estimates the beats using the BeatTrackerDegara algorithm, calculates the intervals between the beats, and then calculates the average interval and the corresponding BPM.
