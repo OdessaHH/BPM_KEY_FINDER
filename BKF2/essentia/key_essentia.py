@@ -1,6 +1,6 @@
 import essentia.standard as es
 
-def estimate_key(audio_path):
+def key_estimate(audio_path):
     # Load audio using Essentia's MonoLoader
     loader = es.MonoLoader(filename=audio_path)
     audio = loader()
@@ -13,7 +13,7 @@ def estimate_key(audio_path):
 
 # Example usage
 audio_path = '/home/user/Music/early_years_terry.mp3'
-key, scale, key_strength = estimate_key(audio_path)
+key, scale, key_strength = key_estimate(audio_path)
 
 # Convert key strength to percentage and round to two decimal places
 key_strength_percent = key_strength * 100
